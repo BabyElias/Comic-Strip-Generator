@@ -2,7 +2,7 @@
   display: grid;
 }
 
-.panel1 {
+.box1 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,7 +36,7 @@
   padding-bottom: 20%;
 }
 
-.panel1:hover {
+.box1:hover {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 

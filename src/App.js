@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import ComicDisplay from "./Panel";
+import ComicDisplay from "./components/box";
 const App = () => {
   const [comicText, setComicText] = useState(Array(10).fill(""));
   const [comicImages, setComicImages] = useState(Array(10).fill(null));
@@ -9,7 +9,7 @@ const App = () => {
   const [error, setError] = useState(null);
   const [state, setState] = useState(1);
   const [annotation, setAnnotation] = useState(Array(10).fill(""));
-  const [darkMode, setDarkMode] = useState(false);
+ 
 
   const handleTextChange = (index, text) => {
     const newTextArray = [...comicText];
@@ -69,20 +69,27 @@ const App = () => {
 
   return (
     <>
-      <div className={`homepage ${darkMode ? 'dark-mode' : ''}`}>
+      <div className="home">
         {state === 1 && (
+          <div className="main">
+            
+            <div className="heading">
+              <div className="image"></div>
+              <div className="text">COMIC-NATOR</div>
+              </div>
+          <div className="homepage">
           <div className="containers">
-            <h1>Comic Strip Generator</h1>
+            
             <div>
               {comicText.map((text, index) => (
-                <div key={index} className="panel">
+                <div key={index} className="box">
                   <label>{`Panel ${index + 1}: `}</label>
                   <input
                     type="text"
                     value={text}
                     onChange={(e) => handleTextChange(index, e.target.value)}
                     className="text-input"
-                    placeholder={`Comic ${index + 1}`}
+                    placeholder={`Let out your creativity here`}
                   />
                   <input
                     type="text"
@@ -90,7 +97,7 @@ const App = () => {
                       handleTextChangeAnnote(index, e.target.value)
                     }
                     className="text-input"
-                    placeholder={`Speech  ${index + 1}`}
+                    placeholder={`Text Box`}
                   />
                 </div>
               ))}
@@ -113,6 +120,8 @@ const App = () => {
                 {error}
               </p>
             )}
+          </div>
+          </div>
           </div>
         )}
       </div>

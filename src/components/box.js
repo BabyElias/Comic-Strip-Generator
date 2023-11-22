@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import "./Panel.css";
-import ComicStripApp from "./App";
+import "./box.css";
+import ComicStripApp from "../App";
 const ComicDisplay = ({ comicImages, annotation }) => {
   const [state, setState] = useState(1)
   const onClose = () => {
@@ -15,7 +15,7 @@ const ComicDisplay = ({ comicImages, annotation }) => {
           <div className="cross-icon"></div>
         </div>
         {comicImages.map((image, index) => (
-          <div key={index} className="panel1">
+          <div key={index} className="box1">
 
 
 
@@ -28,7 +28,7 @@ const ComicDisplay = ({ comicImages, annotation }) => {
                   </div>
 
                 )}
-                <img src={image} alt={`Panel ${index + 1}`} />
+                <img src={image} alt={`box ${index + 1}`} />
 
               </div>
             )}
