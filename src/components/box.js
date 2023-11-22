@@ -4,20 +4,14 @@ import "./box.css";
 import ComicStripApp from "../App";
 const ComicDisplay = ({ comicImages, annotation }) => {
   const [state, setState] = useState(1)
-  const onClose = () => {
-    setState(2);
-  }
+
   return (
     <>
-      {state === 2 && <ComicStripApp />}
-      {state === 1 && <div className="container1">
-        <div className="close-button" onClick={onClose}>
-          <div className="cross-icon"></div>
-        </div>
-        {comicImages.map((image, index) => (
+      
+      <div className="container1">
+  
+        {/* {comicImages.map((image, index) => (
           <div key={index} className="box1">
-
-
 
             {image && (
               <div className="rel">
@@ -34,8 +28,8 @@ const ComicDisplay = ({ comicImages, annotation }) => {
             )}
 
           </div>
-        ))}
-      </div>}
+        ))} */}
+      </div>
     </>
   );
 };

@@ -5,8 +5,6 @@
   padding: 0;
   display: flex;
   justify-content: center;
-
-  
 }
 
 .container {
@@ -40,7 +38,7 @@
   justify-content: center;
   align-items:center;
   position:relative;
-  font-size: 90px;
+  font-size: 9px;
   color: black;
   text-shadow: 0 1px 0 #ccc,
                0 2px 0 #c9c9c9,
@@ -53,10 +51,7 @@
                0 3px 5px rgba(0,0,0,.2),
                0 5px 10px rgba(0,0,0,.25),
                0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
-  
-  
-  
+               0 20px 20px rgba(0,0,0,.15);  
 }
 
 .box {
@@ -154,7 +149,6 @@ body {
 }
 .myButton {
   display: inline-block;
-  
   padding: 8px 16px;
   font-size: 14px;
   font-weight: bold;
@@ -170,4 +164,10 @@ body {
   color: #333;
   background-color: #fff;
   border: 2px solid #333;
+}
+
+.img_box{
+  /* background-color: #fff; */
+  height:1%;
+  border: 15px solid green;
 }

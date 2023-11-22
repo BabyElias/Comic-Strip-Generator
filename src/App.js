@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import ComicDisplay from "./components/box";
 const App = () => {
   const [comicText, setComicText] = useState(Array(10).fill(""));
   const [comicImages, setComicImages] = useState(Array(10).fill(null));
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [state, setState] = useState(1);
+  const [state] = useState(1);
   const [annotation, setAnnotation] = useState(Array(10).fill(""));
  
 
@@ -63,7 +62,6 @@ const App = () => {
       setError(err.message || "Error generating comic. Please try again.");
     } finally {
       setLoading(false);
-      setState(2);
     }
   };
 
@@ -91,18 +89,11 @@ const App = () => {
                     className="text-input"
                     placeholder={`Let out your creativity here`}
                   />
-                  <input
-                    type="text"
-                    onChange={(e) =>
-                      handleTextChangeAnnote(index, e.target.value)
-                    }
-                    className="text-input"
-                    placeholder={`Text Box`}
-                  />
+                  <div className="img_box"><img src={comicImages[index]} alt={`jio`} /></div>
+                   
                 </div>
               ))}
             </div>
-
             <button onClick={generateComic} className="generate-button myButton light-mode">
               <Link
                 to="/comic-display"
@@ -125,9 +116,7 @@ const App = () => {
           </div>
         )}
       </div>
-      {state === 2 && (
-        <ComicDisplay comicImages={comicImages} annotation={annotation} />
-      )}
+        {/* <ComicDisplay comicImages={comicImages} annotation={annotation} /> */}
     </>
   );
 };
