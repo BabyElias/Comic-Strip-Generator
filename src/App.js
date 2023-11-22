@@ -1,25 +1,18 @@
 import React, { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+
 const App = () => {
   const [comicText, setComicText] = useState(Array(10).fill(""));
   const [comicImages, setComicImages] = useState(Array(10).fill(null));
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [state] = useState(1);
-  const [annotation, setAnnotation] = useState(Array(10).fill(""));
- 
 
   const handleTextChange = (index, text) => {
     const newTextArray = [...comicText];
     newTextArray[index] = text;
     setComicText(newTextArray);
-  };
-
-  const handleTextChangeAnnote = (index, text) => {
-    const newTextArray = [...annotation];
-    newTextArray[index] = text;
-    setAnnotation(newTextArray);
   };
 
   const query = async (data) => {
@@ -38,7 +31,7 @@ const App = () => {
         }
       );
       const result = await response.blob();
-      console.log(URL.createObjectURL(result))
+      console.log(URL.createObjectURL(result));
       return URL.createObjectURL(result);
     } catch (err) {
       throw new Error("Error querying the API. Please try again.");
@@ -70,53 +63,59 @@ const App = () => {
       <div className="home">
         {state === 1 && (
           <div className="main">
-            
             <div className="heading">
               <div className="image"></div>
               <div className="text">COMIC-NATOR</div>
-              </div>
-          <div className="homepage">
-          <div className="containers">
-            
-            <div>
-              {comicText.map((text, index) => (
-                <div key={index} className="box">
-                  <label>{`Panel ${index + 1}: `}</label>
-                  <input
-                    type="text"
-                    value={text}
-                    onChange={(e) => handleTextChange(index, e.target.value)}
-                    className="text-input"
-                    placeholder={`Let out your creativity here`}
-                  />
-                  <div className="img_box"><img src={comicImages[index]} alt={`jio`} /></div>
-                   
+            </div>
+            <div className="homepage">
+              <div className="containers">
+                <h1>Some title</h1>
+                <div>
+                  {comicText.map((text, index) => (
+                    <div key={index} className="box">
+                      <label>{`Panel ${index + 1}: `}</label>
+                      <input
+                        type="text"
+                        value={text}
+                        onChange={(e) =>
+                          handleTextChange(index, e.target.value)
+                        }
+                        className="text-input"
+                        placeholder={`Let out your creativity here`}
+                      />
+                      <div className="img_box">
+                        <img src={comicImages[index]} alt={`  `} />
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+                <button
+                  onClick={generateComic}
+                  className="generate-button myButton light-mode"
+                >
+                  <Link
+                    to="/comic-display"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    Generate Comic
+                  </Link>
+                </button>
+                {loading && (
+                  <div class="overlay">
+                    <div className="loader"></div>
+                  </div>
+                )}
+                {error && (
+                  <p style={{ color: "red" }} className="error-message">
+                    {error}
+                  </p>
+                )}
+              </div>
             </div>
-            <button onClick={generateComic} className="generate-button myButton light-mode">
-              <Link
-                to="/comic-display"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                Generate Comic
-              </Link>
-            </button>
-            {loading && <div class="overlay">
-              <div className="loader"></div>
-            </div>
-            }
-            {error && (
-              <p style={{ color: "red" }} className="error-message">
-                {error}
-              </p>
-            )}
-          </div>
-          </div>
           </div>
         )}
       </div>
-        {/* <ComicDisplay comicImages={comicImages} annotation={annotation} /> */}
+      {/**/}
     </>
   );
 };

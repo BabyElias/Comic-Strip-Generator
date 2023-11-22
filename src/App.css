@@ -1,5 +1,5 @@
 .homepage {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   color: #000000;
   margin: 0;
   padding: 0;
@@ -13,50 +13,41 @@
   padding: 20px;
   width: 400px;
 }
-.heading{
-  width:100%;
-  height:900px;
+.heading {
+  width: 100%;
+  height: 900px;
   justify-content: center;
-  display:flex;
-  
+  display: flex;
 }
-.image{
+.image {
   background-image: url("/public/assets/bg.webp");
   background-size: cover;
-  width:100%;
-  height:800px;
-  position:absolute;
+  width: 100%;
+  height: 800px;
+  position: absolute;
   margin-bottom: 20px;
-  opacity:0.8;
+  opacity: 0.8;
 }
-
 
 .text {
   text-align: center;
   display: flex;
   margin-bottom: 20px;
   justify-content: center;
-  align-items:center;
-  position:relative;
+  align-items: center;
+  position: relative;
   font-size: 9px;
   color: black;
-  text-shadow: 0 1px 0 #ccc,
-               0 2px 0 #c9c9c9,
-               0 3px 0 #bbb,
-               0 4px 0 #b9b9b9,
-               0 5px 0 #aaa,
-               0 6px 1px rgba(0,0,0,.1),
-               0 0 5px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);  
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
 .box {
   margin-bottom: 20px;
-  
+
   border: 1px solid black;
   border-radius: 4px;
   padding: 20px;
@@ -102,7 +93,6 @@ body {
   color: #333;
 }
 
-
 .top-right-icons {
   position: absolute;
   top: 10px;
@@ -113,7 +103,7 @@ body {
   cursor: pointer;
   font-size: 24px;
   margin-left: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .overlay {
   position: fixed;
@@ -126,13 +116,13 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  backdrop-filter: blur(5px); 
+  backdrop-filter: blur(5px);
 }
 
 /* Loader styles */
 .loader {
   border: 4px solid rgba(0, 0, 0, 0.1);
-  border-top: 4px solid #333; 
+  border-top: 4px solid #333;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -166,8 +156,8 @@ body {
   border: 2px solid #333;
 }
 
-.img_box{
-  /* background-color: #fff; */
-  height:1%;
-  border: 15px solid green;
-}
+/* .img_box{ */
+/* background-color: #fff; */
+/* height:1%; */
+/* border: 15px solid green; */
+/* } */
