@@ -101,7 +101,7 @@ const App = () => {
             <div className="homepage">
               <div className="containers">
                 <h1>Some title</h1>
-                <div ref={cardRef}>
+                <div>
                   {comicText.map((text, index) => (
                     <div key={index} className="box">
                       <label>{`Panel ${index + 1}: `}</label>
@@ -112,7 +112,7 @@ const App = () => {
                           handleTextChange(index, e.target.value)
                         }
                         className="text-input"
-                        placeholder={`Let out your creativity here`}
+                        placeholder={`Give wings to your creativity here`}
                       />
                       <input
                         type="text"
@@ -139,7 +139,7 @@ const App = () => {
                 >
                   <Link
                     // to="/comic-display"
-                    style={{ textDecoration: "none", color: "inherit" }}
+                    style={{ textDecoration: "none", color: "inherit"}}
                   >
                     Generate Comic
                   </Link>

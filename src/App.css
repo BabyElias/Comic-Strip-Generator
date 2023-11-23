@@ -38,6 +38,7 @@
   position: relative;
   font-size: 90px;
   color: black;
+  user-select: none;
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
     0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
     0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
@@ -148,16 +149,9 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-left: auto;
-}
-
-.myButton.light-mode {
-  color: #333;
-  background-color: #fff;
   border: 2px solid #333;
+  margin-bottom:10px;
+  background-color: white;
+  color:black;
 }
 
-/* .img_box{ */
-/* background-color: #fff; */
-/* height:1%; */
-/* border: 15px solid green; */
-/* } */
