@@ -155,3 +155,33 @@ body {
   color:black;
 }
 
+/* .bubble {
+  position: absolute;
+  text-align: center;
+  color: #333;
+  box-sizing: content-box;
+  line-height: 1;
+  transform: translatey(40px);
+}
+
+.speech {
+  padding-top: 12%;
+  padding-bottom: 20%;
+}
+.speech-bubble {
+  position: absolute;
+  bottom: 20px;
+  right: 40px; 
+  background: linear-gradient(45deg, #FF6B6B, #FFB88C);
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(3, 253, 7, 0.2);
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  line-height: 1.4;
+  text-align: center;
+  transform: rotate(0deg);
+  word-wrap: break-word; 
+  overflow: hidden;
+  margin: 0;
+} */

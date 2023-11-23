@@ -1,6 +1,6 @@
 import html2canvas from "html2canvas";
 import React, { useState, useRef } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./App.css";
 
 
@@ -100,8 +100,7 @@ const App = () => {
             </div>
             <div className="homepage">
               <div className="containers">
-                <h1>Some title</h1>
-                <div>
+                <div  ref={cardRef}>
                   {comicText.map((text, index) => (
                     <div key={index} className="box">
                       <label>{`Panel ${index + 1}: `}</label>
@@ -124,7 +123,14 @@ const App = () => {
                       />
                       {comicImages[index] && (
                         <div className="img_box">
-                          <img src={comicImages[index]} alt={`  `} />
+                        
+                          {annotation[index] && (
+                            <div className="speech bubble abs speech-bubble">
+                            {annotation[index]}
+                            </div>
+
+                )}
+                          {/* <img src={comicImages[index]} alt={`  `} /> */}
                         </div>
                       )}
                       {/* <div className="img_box">
@@ -151,7 +157,7 @@ const App = () => {
                   onClick={handleDownloadImages}
                   disabled={downloading}
                 >
-                  {downloading ? "Downloading" : "Download"}
+                  {downloading ? "Downloading" : "Download to Share with your friends"}
                 </button>
                
                 {loading && (
