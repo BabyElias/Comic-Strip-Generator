@@ -36,7 +36,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  font-size: 9px;
+  font-size: 90px;
   color: black;
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
     0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
@@ -61,7 +61,7 @@ label {
 }
 
 input {
-  width: 100%;
+  width: 500px;
   padding: 8px;
   box-sizing: border-box;
   margin-bottom: 10px;
