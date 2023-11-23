@@ -1,7 +1,8 @@
-import React, { useState,useRef  } from "react";
+import html2canvas from "html2canvas";
+import React, { useState, useRef } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import html2canvas from 'html2canvas';
+
 
 const App = () => {
   const [comicText, setComicText] = useState(Array(10).fill(""));
@@ -10,8 +11,8 @@ const App = () => {
   const [error, setError] = useState(null);
   const [state] = useState(1);
   const [annotation, setAnnotation] = useState(Array(10).fill(""));
-  const [downloading,setDownloading]= useState(false);
-  const cardRef = useRef(null);
+  const [downloading, setDownloading] = useState(false);
+  const cardRef = useRef();
 
   const handleTextChange = (index, text) => {
     const newTextArray = [...comicText];
@@ -68,21 +69,25 @@ const App = () => {
     }
   };
 
-  const handleDownloadImages= async () => {
+  const handleDownloadImages = async () => {
     try {
       setDownloading(true);
       const canvas = await html2canvas(cardRef.current);
-      const dataUrl = canvas.toDataURL('image/png');
-      const a = document.createElement('a');
+      const dataUrl = canvas.toDataURL("image/png");
+      const a = document.createElement("a");
+      
       a.href = dataUrl;
-      a.download = 'canvas_image.png';
+      a.download = "canvas_image.png";
       a.click();
     } catch (error) {
-      console.error('Error generating and downloading image:', error);
-    }finally{
+      console.error("Error generating and downloading image:", error);
+    } finally {
       setDownloading(false);
     }
-  }
+  };
+
+
+
 
   return (
     <>
@@ -96,7 +101,7 @@ const App = () => {
             <div className="homepage">
               <div className="containers">
                 <h1>Some title</h1>
-                <div>
+                <div ref={cardRef}>
                   {comicText.map((text, index) => (
                     <div key={index} className="box">
                       <label>{`Panel ${index + 1}: `}</label>
@@ -110,18 +115,18 @@ const App = () => {
                         placeholder={`Let out your creativity here`}
                       />
                       <input
-                    type="text"
-                    onChange={(e) =>
-                      handleTextChangeAnnote(index, e.target.value)
-                    }
-                    className="text-input"
-                    placeholder={`Text Box`}
-                  />
-                  {comicImages[index]&&(     
-                  
-                      <div className="img_box">
-                        <img src={comicImages[index]} alt={`  `} />
-                      </div>)}
+                        type="text"
+                        onChange={(e) =>
+                          handleTextChangeAnnote(index, e.target.value)
+                        }
+                        className="text-input"
+                        placeholder={`Text Box`}
+                      />
+                      {comicImages[index] && (
+                        <div className="img_box">
+                          <img src={comicImages[index]} alt={`  `} />
+                        </div>
+                      )}
                       {/* <div className="img_box">
                         <img src={comicImages[index]} alt={`  `} />
                       </div> */}
@@ -141,13 +146,14 @@ const App = () => {
                 </button>
 
                 <button
-            type="submit"
-            className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
-            onClick={handleDownloadImages} disabled={downloading}
-          >
-            {downloading? 'Downloading': 'Download'}
-          </button>
-
+                  type="submit"
+                  className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                  onClick={handleDownloadImages}
+                  disabled={downloading}
+                >
+                  {downloading ? "Downloading" : "Download"}
+                </button>
+               
                 {loading && (
                   <div className="overlay">
                     <div className="loader"></div>
