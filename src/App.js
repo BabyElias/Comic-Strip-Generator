@@ -1,5 +1,5 @@
 import React, { useState,useRef  } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./App.css";
 import html2canvas from 'html2canvas';
 
@@ -95,7 +95,6 @@ const App = () => {
             </div>
             <div className="homepage">
               <div className="containers">
-                <h1>Some title</h1>
                 <div>
                   {comicText.map((text, index) => (
                     <div key={index} className="box">
@@ -107,7 +106,7 @@ const App = () => {
                           handleTextChange(index, e.target.value)
                         }
                         className="text-input"
-                        placeholder={`Let out your creativity here`}
+                        placeholder={`Give wings to your creativity here`}
                       />
                       <input
                     type="text"
@@ -134,7 +133,7 @@ const App = () => {
                 >
                   <Link
                     // to="/comic-display"
-                    style={{ textDecoration: "none", color: "inherit" }}
+                    style={{ textDecoration: "none", color: "inherit"}}
                   >
                     Generate Comic
                   </Link>
