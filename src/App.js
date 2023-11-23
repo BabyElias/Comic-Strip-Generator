@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useRef  } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import html2canvas from 'html2canvas';
 
 const App = () => {
   const [comicText, setComicText] = useState(Array(10).fill(""));
@@ -8,11 +9,20 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [state] = useState(1);
+  const [annotation, setAnnotation] = useState(Array(10).fill(""));
+  const [downloading,setDownloading]= useState(false);
+  const cardRef = useRef(null);
 
   const handleTextChange = (index, text) => {
     const newTextArray = [...comicText];
     newTextArray[index] = text;
     setComicText(newTextArray);
+  };
+
+  const handleTextChangeAnnote = (index, text) => {
+    const newTextArray = [...annotation];
+    newTextArray[index] = text;
+    setAnnotation(newTextArray);
   };
 
   const query = async (data) => {
@@ -58,6 +68,22 @@ const App = () => {
     }
   };
 
+  const handleDownloadImages= async () => {
+    try {
+      setDownloading(true);
+      const canvas = await html2canvas(cardRef.current);
+      const dataUrl = canvas.toDataURL('image/png');
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = 'canvas_image.png';
+      a.click();
+    } catch (error) {
+      console.error('Error generating and downloading image:', error);
+    }finally{
+      setDownloading(false);
+    }
+  }
+
   return (
     <>
       <div className="home">
@@ -83,9 +109,22 @@ const App = () => {
                         className="text-input"
                         placeholder={`Let out your creativity here`}
                       />
+                      <input
+                    type="text"
+                    onChange={(e) =>
+                      handleTextChangeAnnote(index, e.target.value)
+                    }
+                    className="text-input"
+                    placeholder={`Text Box`}
+                  />
+                  {comicImages[index]&&(     
+                  
                       <div className="img_box">
                         <img src={comicImages[index]} alt={`  `} />
-                      </div>
+                      </div>)}
+                      {/* <div className="img_box">
+                        <img src={comicImages[index]} alt={`  `} />
+                      </div> */}
                     </div>
                   ))}
                 </div>
@@ -94,14 +133,23 @@ const App = () => {
                   className="generate-button myButton light-mode"
                 >
                   <Link
-                    to="/comic-display"
+                    // to="/comic-display"
                     style={{ textDecoration: "none", color: "inherit" }}
                   >
                     Generate Comic
                   </Link>
                 </button>
+
+                <button
+            type="submit"
+            className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+            onClick={handleDownloadImages} disabled={downloading}
+          >
+            {downloading? 'Downloading': 'Download'}
+          </button>
+
                 {loading && (
-                  <div class="overlay">
+                  <div className="overlay">
                     <div className="loader"></div>
                   </div>
                 )}
