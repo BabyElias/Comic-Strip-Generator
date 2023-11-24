@@ -34,9 +34,9 @@ Make sure npm and nodejs are installed on your machine.
 
 Clone the repository on your local machine and run the following commands.
 
-'''bash
+''' bash
 npm install --legacy-peer-deps
 
-npm start'''
+npm start '''
 
 Happy Comic Creating! 🎉
