@@ -28,4 +28,15 @@ An interactive web application designed to transform your text into captivating 
 
 - **HTML2Canvas Library:** Utilized for client-side capture and download of comic strip images, enhancing the user experience by allowing seamless image creation on the client side.
 
+## Steps to run project
+
+Make sure npm and nodejs are installed on your machine.
+
+Clone the repository on your local machine and run the following commands.
+
+'''bash
+npm install --legacy-peer-deps
+
+npm start'''
+
 Happy Comic Creating! 🎉
