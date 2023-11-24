@@ -5,12 +5,19 @@ import "./App.css";
 
 
 const App = () => {
-  const [comicText, setComicText] = useState(Array(10).fill(""));
-  const [comicImages, setComicImages] = useState(Array(10).fill(null));
+  const comicTextInitialValue = Array(10).fill("");
+  const [comicText, setComicText] = useState(comicTextInitialValue);
+
+  const comicImagesInitialValue = Array(10).fill(null);
+  const [comicImages, setComicImages] = useState(comicImagesInitialValue);
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [state] = useState(1);
-  const [annotation, setAnnotation] = useState(Array(10).fill(""));
+
+  const annotationInitialValue = Array(10).fill("");
+  const [annotation, setAnnotation] = useState(annotationInitialValue);
+
   const [downloading, setDownloading] = useState(false);
   const cardRef = useRef();
 
@@ -123,19 +130,17 @@ const App = () => {
                       />
                       {comicImages[index] && (
                         <div className="img_box">
-                        
+                           {<img src={comicImages[index]} alt={`  `} /> }
                           {annotation[index] && (
-                            <div className="speech bubble abs speech-bubble">
+                            <div className="abs speech-bubble">
                             {annotation[index]}
                             </div>
 
                 )}
-                          {/* <img src={comicImages[index]} alt={`  `} /> */}
+                          
                         </div>
                       )}
-                      {/* <div className="img_box">
-                        <img src={comicImages[index]} alt={`  `} />
-                      </div> */}
+                      
                     </div>
                   ))}
                 </div>
@@ -143,11 +148,8 @@ const App = () => {
                   onClick={generateComic}
                   className="generate-button myButton light-mode"
                 >
-                  <Link
-                    // to="/comic-display"
-                    style={{ textDecoration: "none", color: "inherit"}}
-                  >
-                    Generate Comic
+                  <Link style={{ textDecoration: "none", color: "inherit"}}>
+                    Create Comic
                   </Link>
                 </button>
 
