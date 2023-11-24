@@ -143,21 +143,28 @@ button:hover {
 
 
 .speech-bubble {
-  position: absolute;
-  bottom: 20px;
-  right: 40px; 
-  background: white;
-  padding: 20px;
-  border-radius: 25px;
-  font-family: 'Arial', sans-serif;
-  color: black;
-  line-height: 1.4;
+	position: relative;
+	background: white;
+	border-radius: .4em;
+  padding:20px;
   text-align: center;
-  transform: rotate(0deg);
   word-wrap: break-word; 
-  overflow: hidden;
-  margin: 0;
-  transform: skew(-15deg);
+  
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: white;
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
 }
 
 .abs {
