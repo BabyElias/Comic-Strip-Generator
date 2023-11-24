@@ -16,7 +16,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 30%;
+  width: 120vh;
 }
 
 .heading {
@@ -54,7 +54,7 @@
 
 .box {
   margin-bottom: 20px;
-
+  width:120vh;
   border: 1px solid black;
   border-radius: 4px;
   padding: 20px;
@@ -176,4 +176,55 @@ button:hover {
   height: 27px;
   max-width: 80%;
 }
+@media (max-width: 900px) {
+  .box {
+    width: 90vh !important;
+  }
+  .containers {
+    width: 90vh !important;
+  }
+  .text {
+    font-size: 70px !important;
+  }
+ 
+}
+@media (max-width: 650px) {
+  .box {
+    width: 70vh !important;
+  }
+  .containers {
+    width: 70vh !important;
+  }
+  
+ 
+}
+@media (max-width: 530px) {
+  .box {
+    width: 50vh !important;
+  }
+  .containers {
+    width: 50vh !important;
+  }
+  .text {
+    font-size: 60px !important;
+  }
+  
+ 
+}
+@media (max-width: 390px) {
+  .box {
+    width: 35vh !important;
+  }
+  .containers {
+    width: 35vh !important;
+  }
+  .text {
+    font-size: 40px !important;
+  }
+  
+  
+ 
+}
+
+
 
