@@ -8,8 +8,10 @@
 }
 .img_box{
   position: relative;
-  width: 50%;
-  min-width: 360px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .containers {
   display: flex;
@@ -170,11 +172,13 @@ button:hover {
 .abs {
   position: absolute;
   top: 24px;
-  right:-80px;
   width: auto;
   min-width: 35%;
   height: 27px;
   max-width: 80%;
+}
+.img{
+  width: 100%;
 }
 @media (max-width: 900px) {
   .box {
@@ -208,6 +212,13 @@ button:hover {
   .text {
     font-size: 60px !important;
   }
+  .abs{
+    top:9px;
+    font-size: 10px !important;
+  }
+  .speech-bubble{
+    padding: 0px;
+  }
   
  
 }
@@ -221,6 +232,7 @@ button:hover {
   .text {
     font-size: 40px !important;
   }
+
   
   
  
