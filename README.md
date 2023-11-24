@@ -1,14 +1,12 @@
 # Comic-Nator
 ## _Your Own Comic Generator_
+![image](https://github.com/BabyElias/Comic-Strip-Generator/assets/95405559/5d6ace14-7c31-451a-b675-744fa348818b)
 
 ## Table of Contents
 
 1. [Overview](#overview)
 2. [Key Features](#key-features)
 3. [Technologies Used](#technologies-used)
-4. [Issues and Contributions](#issues-and-contributions)
-5. [License](#license)
-6. [Acknowledgments](#acknowledgments)
 
 ## Overview
 
