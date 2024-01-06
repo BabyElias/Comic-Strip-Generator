@@ -1,6 +1,7 @@
 # Comic-Nator
 ## _Your Own Comic Generator_
 ![image](https://github.com/BabyElias/Comic-Strip-Generator/assets/95405559/5d6ace14-7c31-451a-b675-744fa348818b)
+Note : The API is currently down, will update to an alternative soon.
 
 ## Table of Contents
 
